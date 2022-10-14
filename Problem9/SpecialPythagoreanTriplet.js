@@ -14,10 +14,10 @@ for(let a = 1; a < 1000; a++){
                 let A = a**2
                 let B = b**2
                 let C = c**2
-                if(A + B == C){
+                if(A + B == C){//could be all in one conditional
                     if(a + b + c == 1000){
                         
-                        console.log(a,b,c)
+                        console.log(a*b*c)
                         // count++
                     }
                 }
