@@ -31,11 +31,25 @@ const isPrime = (n)=>{
 
 // for(let n = 0; n <= 39; n++){
 //     let prime = (n*n) + n + 41
-//     // console.log(prime)
+//     // console.log(prime)   
 //     let p = isPrime(prime)
 //     console.log(n,prime, p)
-    
+     
 // }
+
+const longestPrimeSequence = () =>{
+
+    let isItPrime = true
+    let primeArray = []
+    let n = 0
+    while(n <= 39){
+        let number = n**2 - 79*n + 1601
+        console.log(number, isPrime(number));
+        n++
+    }
+
+}
+longestPrimeSequence()
 let A = 99
 let B =100
 let count = 0
@@ -44,4 +58,4 @@ for(let a = -99; a <= A; a++){
         
     }
 }
-console.log(count)
+// console.log(count)
