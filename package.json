@@ -1,0 +1,23 @@
+{
+  "name": "ProjectEuler",
+  "version": "1.0.0",
+  "description": "Collection of exercises from Project Euler and solutions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luishong07/ProjectEuler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luishong07/ProjectEuler/issues"
+  },
+  "homepage": "https://github.com/luishong07/ProjectEuler#readme",
+  "devDependencies": {
+    "jest": "^29.4.1"
+  }
+}
