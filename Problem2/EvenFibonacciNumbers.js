@@ -3,18 +3,22 @@
 // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
-let total = 0
-let n1 = 0
-let n2 = 1
-let temp
-while (n2 <= 4000000) {
-    temp = n1
-    n1 = n1 + n2
-    n2 = temp
-    if(n2 % 2 ==0){
-        // console.log(n2)
-        total += n2
+const EvenFib = ()=>{
+    let total = 0
+    let n1 = 0
+    let n2 = 1
+    let temp
+    while (n2 <= 4000000) {
+        temp = n1
+        n1 = n1 + n2
+        n2 = temp
+        if(n2 % 2 ==0){
+            // console.log(n2)
+            total += n2
+        }
+        // end--
     }
-    // end--
+    return total
 }
-console.log(total)
+
+module.exports = EvenFib

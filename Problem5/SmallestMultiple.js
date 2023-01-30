@@ -34,7 +34,7 @@
 //         smallest%17 == 0 &&
 //         smallest%18 == 0 &&
 //         smallest%19 == 0 &&
-//         smallest%20 == 0 
+//         smallest%20 == 0
 //     ){
 //         console.log("found it", smallest)
 //         found = true
@@ -43,25 +43,31 @@
 //     else{
 //         smallest++
 //     }
-        
 
 // }
 // to do: find more optimal approach
 const check = (num) => {
-    for( let currentDivisor = 1; currentDivisor < 21; currentDivisor++){
-        if((num % currentDivisor) != 0){
-            num = (num * currentDivisor)/(currentDivisor-1)
-            // console.log(num)
-            return num
-        }
+  for (let currentDivisor = 1; currentDivisor < 21; currentDivisor++) {
+    if (num % currentDivisor != 0) {
+      num = (num * currentDivisor) / (currentDivisor - 1);
+      // console.log(num)
+      return num;
     }
-    console.log(num)
+  }
+  //   console.log(num);
 
-    return 0
-}
+  return 0;
+};
 
-let num = 1
-while(check(num) != 0){
-    num = check(num)
-}
+const SmalllestMultiple = () => {
+  let num = 1;
+  while (check(num) != 0) {
+    num = check(num);
+  }
+  //   console.log(num)
+  return num;
+};
 
+SmalllestMultiple();
+
+module.exports = SmalllestMultiple;
