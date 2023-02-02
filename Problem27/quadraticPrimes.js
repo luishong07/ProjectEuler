@@ -49,26 +49,38 @@ const longestPrimeSequence = (a,b) =>{
         // console.log(n,number, isPrime(number));
 
         // console.log(n,number,isPrime(number))
-        n+=1
         if(!isPrime(number)){
-            // console.log(number, "poop");
             isItPrime = !isItPrime
-            
+            console.log(n);
+            return n
         }
+        n+=1
     }
-    console.log(n)
+    // console.log(n)
     
 }
-longestPrimeSequence(-79,1601)
+longestPrimeSequence(-61,971)
 
 let A = 999
 let B =1000
+
+// let A = 99
+// let B =100
 let count = 0
+let Longest = 0
+let a1 
+let b2
 for(let a = -A; a <= A; a++){
     for(let b = -B; b <= B; b++){
         // if(a == 0) continue
-        
+        let PrimeChain = longestPrimeSequence(a,b)
+        if(PrimeChain >= Longest){
+            Longest = PrimeChain
+            a1 = a 
+            b2 = b 
+        }
+        // console.log(a,b,PrimeChain);
         count++
     }
 }
-// console.log(count)
+console.log(Longest,a1, b2)
