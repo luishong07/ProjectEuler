@@ -29,13 +29,7 @@ const isPrime = (n)=>{
 }
 
 
-// for(let n = 0; n <= 39; n++){
-//     let prime = (n*n) + n + 41
-//     // console.log(prime)   
-//     let p = isPrime(prime)
-//     console.log(n,prime, p)
-     
-// }
+
 let LongChain = 0
 const longestPrimeSequence = (a,b) =>{
 
@@ -44,11 +38,7 @@ const longestPrimeSequence = (a,b) =>{
     let n = 0
     while(isItPrime){
         let number = n**2 + a*n + b
-        // let number = n**2 + n + 41
-        // let number = n**2 - 79*n + 1601
-        // console.log(n,number, isPrime(number));
-
-        // console.log(n,number,isPrime(number))
+        
         if(!isPrime(number)){
             isItPrime = !isItPrime
             console.log(n);
@@ -56,7 +46,6 @@ const longestPrimeSequence = (a,b) =>{
         }
         n+=1
     }
-    // console.log(n)
     
 }
 longestPrimeSequence(-61,971)
@@ -64,22 +53,19 @@ longestPrimeSequence(-61,971)
 let A = 999
 let B =1000
 
-// let A = 99
-// let B =100
+
 let count = 0
 let Longest = 0
 let a1 
 let b2
 for(let a = -A; a <= A; a++){
     for(let b = -B; b <= B; b++){
-        // if(a == 0) continue
         let PrimeChain = longestPrimeSequence(a,b)
         if(PrimeChain >= Longest){
             Longest = PrimeChain
             a1 = a 
             b2 = b 
         }
-        // console.log(a,b,PrimeChain);
         count++
     }
 }
