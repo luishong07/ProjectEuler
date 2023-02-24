@@ -16,14 +16,20 @@ const isPrime = (n)=>{
     }
     return true
 }
-let primeSum = 0
-for(let i = 1; i <= 2000000; i++){
-    //check if it is prime
-    // console.log(i)
-    if(isPrime(i)){
-        // console.log(i)
-        primeSum+=i
-    }
+const SummationOfPrimes = ()=>{
 
+    let primeSum = 0
+    for(let i = 1; i <= 2000000; i++){
+        //check if it is prime
+        // console.log(i)
+        if(isPrime(i)){
+            // console.log(i)
+            primeSum+=i
+        }
+        
+    }
+    // console.log(primeSum,"sum")
+    return primeSum
 }
-console.log(primeSum,"sum")
+
+module.exports =  SummationOfPrimes
