@@ -39,18 +39,26 @@ const triangleNumber = (n) =>{
     for(let i =n; 0 < i; i--){
         triNumber += i
     }
-    console.log(triNumber);
+    // console.log(triNumber);
     return triNumber
 }
 // triangleNumber()
 // console.log(triangleNumber(76576500))
-let numberOfDivisors = 1
-let index = 1
-let output 
-while(numberOfDivisors < 500){
-    let number = triangleNumber(index)
-    numberOfDivisors = listDivisors(number)
-    index++
-    console.log(number)
-}
+const DivisibleNumber = ()=>{
 
+    let numberOfDivisors = 1
+    let index = 1
+    let output 
+    while(numberOfDivisors < 500){
+        let number = triangleNumber(index)
+        output = triangleNumber(index)
+        numberOfDivisors = listDivisors(number)
+        index++
+        // console.log(number)
+    }
+    // console.log(output);
+    return output
+}
+// DivisibleNumber()
+
+module.exports = DivisibleNumber
