@@ -30,7 +30,7 @@ const listDivisors = (n) => {
     noOfDivisors = list.length
     return noOfDivisors
 }
-console.log(listDivisors(76576500))
+// console.log(listDivisors(76576500))
 
 
 
@@ -39,16 +39,18 @@ const triangleNumber = (n) =>{
     for(let i =n; 0 < i; i--){
         triNumber += i
     }
+    console.log(triNumber);
     return triNumber
 }
-
+// triangleNumber()
 // console.log(triangleNumber(76576500))
-// let numberOfDivisors = 1
-// let index = 1
-// let output 
-// while(numberOfDivisors < 500){
-//     let number = triangleNumber(index)
-//     numberOfDivisors = listDivisors(number)
-//     index++
-//     console.log(number)
-// }
+let numberOfDivisors = 1
+let index = 1
+let output 
+while(numberOfDivisors < 500){
+    let number = triangleNumber(index)
+    numberOfDivisors = listDivisors(number)
+    index++
+    console.log(number)
+}
+

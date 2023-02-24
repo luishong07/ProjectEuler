@@ -1,0 +1,3 @@
+const triangleNumber = require('./DivisibleTriangularNumber')
+
+
