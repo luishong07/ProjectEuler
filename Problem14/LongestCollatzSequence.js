@@ -30,20 +30,27 @@ const collatzRun =(n,chain)=>{
 // let out =  collatzRun(13,0)
 // console.log(out)
 
-let longestChain = 0
-let currentChain = 0
-let currentValue = 0
-let longestStarter = 0
-let currentRun 
-for(let i = 1000000; i > 0; i--){
-   currentRun = collatzRun(i,1)
-   currentChain = currentRun[1]
-   currentValue = currentRun[0]
-//    console.log(currentValue, currentChain)
-   if(currentChain > longestChain){
-    longestChain = currentChain
-    longestStarter = currentValue
 
-   }
+const LongestCollatz = ()=>{
+
+    let longestChain = 0
+    let currentChain = 0
+    let currentValue = 0
+    let longestStarter = 0
+    let currentRun 
+    for(let i = 1000000; i > 0; i--){
+        currentRun = collatzRun(i,1)
+        currentChain = currentRun[1]
+        currentValue = currentRun[0]
+        //    console.log(currentValue, currentChain)
+        if(currentChain > longestChain){
+            longestChain = currentChain
+            longestStarter = currentValue
+            
+        }
+    }
+    // console.log(longestStarter, longestChain,"end")
+    return longestStarter
 }
-console.log(longestStarter, longestChain,"end")
+
+module.exports = LongestCollatz
