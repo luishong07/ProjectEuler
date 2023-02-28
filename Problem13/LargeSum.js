@@ -101,9 +101,15 @@ let array = [
 20849603980134001723930671666823555245252804609722n,
 53503534226472524250874054075591789781264330331690n
 ]
+const LargeSum = ()=>{
 
-let sum = 0n
-for(let i = 0; i < array.length; i++){
-    sum += array[i]
+    let sum = 0n
+    for(let i = 0; i < array.length; i++){
+        sum += array[i]
+    }
+    // console.log(sum.toString().substring(0,10))
+    let firstDigits = sum.toString().substring(0,10)
+    return firstDigits
 }
-console.log(sum.toString().substring(0,10))
+
+module.exports = LargeSum
