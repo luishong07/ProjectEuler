@@ -62,4 +62,4 @@ const pandigitalCheck = (arr) =>{
         // console.log(n)
     }
 }
-pandigitalCheck(arr)
+// pandigitalCheck(arr)
