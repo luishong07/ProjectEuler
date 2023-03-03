@@ -38,7 +38,7 @@ const permutator = (inputArr) => {
     return result;
 };
 // console.log(permutator(["1", "2", "3", "4", "5", "6", "7", "8", "9"]).length);
-let permutations =  permutator(["1", "2", "3","4","5","6"])
+let permutations =  permutator(["1", "2", "3", "4", "5", "6", "7", "8", "9"])
 const arrayToString = (permutations) => {
     let result =  []
     for(let i = 0; i < permutations.length; i++){
@@ -50,16 +50,27 @@ const arrayToString = (permutations) => {
 // console.log(arrayToString(permutations).length)
 let arr = arrayToString(permutations)
 const pandigitalCheck = (arr) =>{
-    for(let i = 0; i < arr.length; i++){
-        let n = arr[i]
-        let multiplicand = parseInt(n.slice(0,1))
-        let multiplier = parseInt(n.slice(1,3))
-        let product = parseInt(n.slice(3))
-        // console.log(n, multiplicand, multiplier,product)
-        if(multiplicand*multiplier==product){
-            console.log(n);
+    let productArray = []
+    for(let k = 1; k <=3; k++){
+
+        for(let i = 0; i < arr.length; i++){
+            let n = arr[i]
+            let multiplicand = parseInt(n.slice(0,k))
+            let multiplier = parseInt(n.slice(k,5))
+            let product = parseInt(n.slice(5))
+            // console.log(n, multiplicand, multiplier,product)
+            if(multiplicand*multiplier==product){
+                console.log(multiplicand, multiplier, multiplicand*multiplier);
+                // productArray+=product
+                if(!productArray.includes(product)){
+                    productArray.push(product)
+
+                }
+            }
         }
-        // console.log(n)
     }
+    console.log(productArray.reduce((accu,current)=>{
+        return accu + current
+    },0))
 }
-// pandigitalCheck(arr)
+pandigitalCheck(arr)
