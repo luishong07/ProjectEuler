@@ -6,35 +6,43 @@
 // Evaluate the sum of all the amicable numbers under 10000.
 
 const listDivisors = (n) => {
-    let list = []
-    let noOfDivisors 
-    for(let i = 1; i <= Math.sqrt(n); i++){
-        if(n % i === 0){
-            if(parseInt((n/i), 10) == i){
-                list.push(i)
-            }else {
-                list.push(i)
-                list.push(n/i)
+    let list = [];
+    let noOfDivisors;
+    for (let i = 1; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            if (parseInt(n / i, 10) == i) {
+                list.push(i);
+            } else {
+                list.push(i);
+                list.push(n / i);
             }
         }
     }
-    noOfDivisors = list.length
-    let indexOfSelf = list.indexOf(n)
-    list.splice(indexOfSelf,1)
-    let posibleAmiNum = list.reduce((accumulator, currentValue) => accumulator + currentValue,0)
-    return posibleAmiNum
-}
+    noOfDivisors = list.length;
+    let indexOfSelf = list.indexOf(n);
+    list.splice(indexOfSelf, 1);
+    let posibleAmiNum = list.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+    );
+    return posibleAmiNum;
+};
 // console.log(listDivisors(0))
-let amicableTotal = 0
-for(let i = 1; i <= 10000; i++){
-    let b = listDivisors(i)
-    let a = listDivisors(b)
-    if(listDivisors(b) == i && listDivisors(i) == b && a != b){
-        // console.log(i, a, b)
-        amicableTotal += i
-    }else{
-        // console.log("poop")
+const AmicableNumbers = () => {
+    let amicableTotal = 0;
+    for (let i = 1; i <= 10000; i++) {
+        let b = listDivisors(i);
+        let a = listDivisors(b);
+        if (listDivisors(b) == i && listDivisors(i) == b && a != b) {
+            // console.log(i, a, b)
+            amicableTotal += i;
+        } else {
+            // console.log("poop")
+        }
     }
-}
 
-console.log(amicableTotal)
+    // console.log(amicableTotal);
+    return amicableTotal
+};
+// AmicableNumbers()
+module.exports = AmicableNumbers

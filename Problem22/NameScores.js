@@ -37,14 +37,20 @@ let alphabetValues = {
 }
 let n = ["COLIN","PATRICIA","LINDA","BARBARA","ELIZABETH","JENNIFER","MARIA","SUSAN","MARGARET"]
 let namesTotal = 0
-for(let i = 0; i < sortedNames.length; i++){
-    let position = i + 1
-    let name = sortedNames[i]
-    let nameValue = 0
-    for(let j = 0; j < name.length; j++ ){
-        nameValue += alphabetValues[name[j]]
+const NameScores = ()=>{
+
+    for(let i = 0; i < sortedNames.length; i++){
+        let position = i + 1
+        let name = sortedNames[i]
+        let nameValue = 0
+        for(let j = 0; j < name.length; j++ ){
+            nameValue += alphabetValues[name[j]]
+        }
+        // console.log(name, position, nameValue)
+        namesTotal += (position*nameValue)
     }
-    // console.log(name, position, nameValue)
-    namesTotal += (position*nameValue)
+    // console.log(namesTotal)
+    return namesTotal
 }
-console.log(namesTotal)
+
+module.exports = NameScores

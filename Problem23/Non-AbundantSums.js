@@ -25,12 +25,18 @@ const listDivisors = (n) => {
     let posibleAmiNum = list.reduce((accumulator, currentValue) => accumulator + currentValue,0)
     return posibleAmiNum
 }
-// console.log(listDivisors(24));
-let abundantTotal = 0
-for(let i = 1; i < 220; i++){
-    if(listDivisors(i) >= i){
-        console.log(i);
-        abundantTotal+= i
+// console.log(listDivisors.(24));
+const NonAbundantSums = ()=>{
+
+    let abundantTotal = 0
+    for(let i = 1; i < 220; i++){
+        if(listDivisors(i) >= i){
+            console.log(i);
+            abundantTotal+= i
+        }
     }
+    // console.log(abundantTotal);
+    return abundantTotal
 }
-console.log(abundantTotal);
+
+module.exports = NonAbundantSums

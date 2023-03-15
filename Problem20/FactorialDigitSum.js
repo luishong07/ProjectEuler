@@ -4,17 +4,22 @@
 // and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 
 // Find the sum of the digits in the number 100!
-let total = 1n
+const FactorialDigitSum = () => {
+    let total = 1n;
 
-for(let i = 1n; i <= 100; i++){
-    total *= i
-}
+    for (let i = 1n; i <= 100; i++) {
+        total *= i;
+    }
 
-// console.log(total)
-let stringNumber = total.toString()
-// console.log()
-let totalString = 0
-for(let j = 0; j < stringNumber.length; j++){
-    totalString += parseInt(stringNumber[j])
-}
-console.log(totalString)
+    // console.log(total)
+    let stringNumber = total.toString();
+    // console.log()
+    let totalString = 0;
+    for (let j = 0; j < stringNumber.length; j++) {
+        totalString += parseInt(stringNumber[j]);
+    }
+    // console.log(totalString);
+    return totalString
+};
+FactorialDigitSum()
+module.exports = FactorialDigitSum
