@@ -11,9 +11,10 @@
 // What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
 
 
-let rows = 1001
-let columns = 1001
-
+// let rows = 1001
+// let columns = 1001
+let rows = 5
+let columns = 5
 let matrix =[]
 
 for (let i=0; i < rows; i++){
@@ -43,12 +44,16 @@ function MatrixToSpiral(arr, mat){
     let index = 0
 
 
-
+    // console.log(mat)
     while(true){
+        // console.log(mat)
+
         if(left > right) break
         //top row
         for(let i  = left; i<= right; i++){
             mat[top][i] = arr[index++]
+            console.log(top,i)
+
         }
         top++
 
@@ -56,6 +61,8 @@ function MatrixToSpiral(arr, mat){
         //right column
         for(let i = top; i <= bottom;i++){
             mat[i][right] = arr[index++]
+            console.log(i, right)
+
         }
         right--
 
@@ -63,6 +70,8 @@ function MatrixToSpiral(arr, mat){
         //bottom row
         for(let i = right; i >= left; i--){
             mat[bottom][i] = arr[index++]
+            console.log(bottom, i)
+
 
         }
         bottom--
@@ -71,9 +80,12 @@ function MatrixToSpiral(arr, mat){
         //left column
         for(let i = bottom; i >= top; i--){
             mat[i][left] = arr[index++]
+            console.log(i, left)
+
         }
         left++
     }
+    console.log(mat)
 }
 function printSpiral(mat){
     for(let i = 0; i < rows; i++){
