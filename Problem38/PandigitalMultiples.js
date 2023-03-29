@@ -16,18 +16,22 @@ const pandigital1To9 = (n) => {
     let concatResult = "";
     let i = 1;
     let result;
+    let currentProduct = "";
     while (checkPan) {
-        // console.log(concatResult.length)
-        if (concatResult.length > 9) {//if concatResult length is greater than 9 stop the loop
-            break
-            // checkPan = false;
-            // result = [concatResult, n, i - 1];
-        } else {
-            // concatResult += `${i * n}`;
+        //inital check
+        currentProduct = `${i * n}`;
+        if (concatResult.length + currentProduct.length > 9) {
+            //if the sum is larger than 9. stop the loop
+            checkPan = false;
+        }else{
+
+            concatResult += `${i * n}`;
         }
+        result = [concatResult, n, i -1]
+        // console.log(concatResult.length , currentProduct.length );
         i++;
     }
-    console.log(concatResult)
+    console.log(result);
     // let freq = {};
     // for (let j = 0; j < concatResult.length; j++) {
     //     if (!(concatResult[j] in freq)) {
@@ -50,7 +54,7 @@ const pandigital1To9 = (n) => {
     // return parseInt(concatResult)
 };
 // console.log(pandigital1To9(18).toString().length)
-pandigital1To9(18)
+pandigital1To9(192);
 // let current = 0;
 // let i = 9;
 // while (current < 987654321) {
