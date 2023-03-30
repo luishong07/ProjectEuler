@@ -31,39 +31,43 @@ const pandigital1To9 = (n) => {
         // console.log(concatResult.length , currentProduct.length );
         i++;
     }
-    console.log(result);
-    // let freq = {};
-    // for (let j = 0; j < concatResult.length; j++) {
-    //     if (!(concatResult[j] in freq)) {
-    //         //if number is not in freq obj
-    //         freq[concatResult[j]] = 1; // add it to the obj and set it to one
-    //     } else {
-    //         //else, it is already there, just add one to it
-    //         freq[concatResult[j]] += 1;
-    //     }
-    // }
+    // console.log(result);
+    let freq = {};
+    for (let j = 0; j < concatResult.length; j++) {
+        if (!(concatResult[j] in freq)) {
+            //if number is not in freq obj
+            freq[concatResult[j]] = 1; // add it to the obj and set it to one
+        } else {
+            //else, it is already there, just add one to it
+            freq[concatResult[j]] += 1;
+        }
+    }
 
     // console.log(Object.values(freq))
-    // let freqValues = Object.values(freq);
-    // for (let k = 0; k < freqValues.length; k++) {
-    //     if (freqValues[k] != 1) {
-    //         // console.log("problem")
-    //         return false;
-    //     }
-    // }
-    // return parseInt(concatResult)
+    let freqValues = Object.values(freq);
+    for (let k = 0; k < freqValues.length; k++) {
+        if (freqValues[k] != 1) {
+            // console.log("problem")
+            return false;
+        }
+    }
+    return parseInt(concatResult)
 };
-// console.log(pandigital1To9(18).toString().length)
-pandigital1To9(192);
+console.log(pandigital1To9(192))
 // let current = 0;
+// let temp
 // let i = 9;
+// //what conditional makes this stop
 // while (current < 987654321) {
-//     console.log(i)
-//     current = pandigital1To9(i)
-//     if(current){
-//         console.log(current)
+//     temp = pandigital1To9(i)
+//     console.log(i, temp)
+//     if(temp){
+//         if(temp > current ){
+//             current = pandigital1To9(i)
+//         }
 //     }else{
-//         console.log(current)
+//         // current = 
+//         // console.log(current)
 //     }
 //     i++
 // }
