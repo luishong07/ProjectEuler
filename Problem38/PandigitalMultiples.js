@@ -54,20 +54,20 @@ const pandigital1To9 = (n) => {
     return parseInt(concatResult)
 };
 console.log(pandigital1To9(192))
-// let current = 0;
-// let temp
-// let i = 9;
-// //what conditional makes this stop
-// while (current < 987654321) {
-//     temp = pandigital1To9(i)
-//     console.log(i, temp)
-//     if(temp){
-//         if(temp > current ){
-//             current = pandigital1To9(i)
-//         }
-//     }else{
-//         // current = 
-//         // console.log(current)
-//     }
-//     i++
-// }
+let current = 0;
+let temp
+let i = 9;
+//what conditional makes this stop
+while (current < 987654321) {
+    temp = pandigital1To9(i)
+    console.log(i, temp)
+    if(temp){
+        if(temp > current ){
+            current = pandigital1To9(i)
+        }
+    }else{
+        // current = 
+        // console.log(current)
+    }
+    i++
+}
