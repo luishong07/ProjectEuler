@@ -19,20 +19,23 @@
 
 // What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 
-let f1 = 1
-let f2 = 1
-let temp
-let isLongFibo = false
-let index = 1
-while(!isLongFibo){
-    temp = f1
-    f1 = f1 +f2
-    f2 = temp
-    // console.log(f2)
-    index++
-    if(f2.toString().length == 1000){
-        isLongFibo = true
-        console.log(index)
-        return
+const thousandDigit = () => {
+    let f1 = 1n;
+    let f2 = 1n;
+    let temp = 0n;
+    let isLongFibo = false;
+    let index = 1n;
+    while (!isLongFibo) {
+        temp = f1;
+        f1 = f1 + f2;
+        f2 = temp;
+        index+=1n;
+        if (f2.toString().length == 1000) {
+            isLongFibo = true;
+            // console.log(index);
+        }
     }
-}
+    return index
+};
+
+module.exports = thousandDigit
