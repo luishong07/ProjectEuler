@@ -13,60 +13,57 @@
 
 //implementation of first formula
 
-const isPrime = (n)=>{
-    if(n <= 1) return false
+const isPrime = (n) => {
+    if (n <= 1) return false;
 
-    if(n == 2 || n == 3) return true
+    if (n == 2 || n == 3) return true;
 
-    if(n % 2 == 0 || n % 3 == 0) return false
+    if (n % 2 == 0 || n % 3 == 0) return false;
 
-    for(let i = 5; i <= Math.sqrt(n); i = i+6){
-        if(n % i == 0 || n % (i+2) ==0){
-            return false
+    for (let i = 5; i <= Math.sqrt(n); i = i + 6) {
+        if (n % i == 0 || n % (i + 2) == 0) {
+            return false;
         }
     }
-    return true
-}
+    return true;
+};
 
-
-
-let LongChain = 0
-const longestPrimeSequence = (a,b) =>{
-
-    let isItPrime = true
+let LongChain = 0;
+const longestPrimeSequence = (a, b) => {
+    let isItPrime = true;
     // let primeArray = []
-    let n = 0
-    while(isItPrime){
-        let number = n**2 + a*n + b
-        
-        if(!isPrime(number)){
-            isItPrime = !isItPrime
-            console.log(n);
-            return n
+    let n = 0;
+    while (isItPrime) {
+        let number = n ** 2 + a * n + b;
+        // console.log(n);
+
+        if (!isPrime(number)) {
+            isItPrime = false;
+            // console.log(n);
+            return n;
         }
-        n+=1
+        n += 1;
     }
-    
-}
-longestPrimeSequence(-61,971)
+};
+// longestPrimeSequence(-79,1601)
 
-let A = 999
-let B =1000
+let A = 999;
+let B = 1000;
 
-
-let count = 0
-let Longest = 0
-let a1 
-let b2
-for(let a = -A; a <= A; a++){
-    for(let b = -B; b <= B; b++){
-        let PrimeChain = longestPrimeSequence(a,b)
-        if(PrimeChain >= Longest){
-            Longest = PrimeChain
-            a1 = a 
-            b2 = b 
+let count = 0;
+let Longest = 0;
+let a1;
+let b2;
+for (let a = -A; a <= A; a++) {
+    for (let b = -B; b <= B; b++) {
+        console.log(count)
+        let PrimeChain = longestPrimeSequence(a, b);
+        if (PrimeChain >= Longest) {
+            Longest = PrimeChain;
+            a1 = a;
+            b2 = b;
         }
-        count++
+        count++;
     }
 }
-console.log(Longest,a1, b2)
+console.log(Longest, a1, b2);
