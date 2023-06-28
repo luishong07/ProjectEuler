@@ -25,7 +25,8 @@ const isPrime = (n)=>{
     }
     return true
 }
-let fourDigitPrimes = []
+
+let fourDigitPrimes = []//all four-digit primes
 
 for(let i = 1001; i <= 9998; i ++){
     if(isPrime(i)){
@@ -51,6 +52,7 @@ const permutator = (inputArr) => {
             }
         }
     }
+    // console.log(inputArr)
     permute(inputArr)
     // console.log(result[999999]);
     return result
@@ -59,17 +61,21 @@ const permutator = (inputArr) => {
 
 // console.log(permutator(['1','4','8','7']))
 
-const permutations = permutator()
+// const permutations = permutator()//permutations of any given four-digit number
 
-for(let i = 0; i < 30; i++){
+// console.log(fourDigitPrimes.length)
+
+for(let i = 0; i < fourDigitPrimes.length; i++){
     let temp1 = fourDigitPrimes[i] + 3330
     let temp2 = fourDigitPrimes[i] + 6660
+    let numberAsArray = fourDigitPrimes[i].toString().split("")
 
     let inRange = fourDigitPrimes.includes(temp1) && fourDigitPrimes.includes(temp2)
+    let permutations = permutator(numberAsArray)
+    let isPermutation = permutations.includes(temp1.toString()) && permutations.includes(temp2.toString())
 
-
-    // if(isPrime(temp1) && isPrime(temp2)){
-    //     console.log(fourDigitPrimes[i], temp1, temp2)
-    // }
+    if(inRange && isPermutation){
+        console.log(fourDigitPrimes[i], temp1, temp2)
+    }
 }
 
