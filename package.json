@@ -19,5 +19,7 @@
   "homepage": "https://github.com/luishong07/ProjectEuler#readme",
   "devDependencies": {
     "jest": "^29.4.1"
-  }
+  },
+  "type": "module"
+
 }
